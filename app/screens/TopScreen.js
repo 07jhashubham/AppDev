@@ -1,12 +1,20 @@
 import React from "react";
 import { Image, StyleSheet, View } from "react-native";
 import color from "../config/color";
-
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 function TopScreen(props) {
   return (
     <View style={{ backgroundColor: "#000" }}>
-      <View style={ch.box1}></View>
-      <View style={ch.box2}></View>
+      <View style={ch.box1}>
+        <MaterialCommunityIcons name="close" color={"white"} size={40} />
+      </View>
+      <View style={ch.box2}>
+        <MaterialCommunityIcons
+          name="trash-can-outline"
+          color={"white"}
+          size={40}
+        />
+      </View>
       <Image
         resizeMode="contain"
         style={ch.main}
@@ -19,19 +27,15 @@ function TopScreen(props) {
 const ch = StyleSheet.create({
   box1: {
     position: "absolute",
-    height: 70,
-    width: 70,
+
     top: 50,
     left: 40,
-    backgroundColor: color.secondry,
   },
   box2: {
     position: "absolute",
-    height: 70,
-    width: 70,
+
     top: 50,
     right: 40,
-    backgroundColor: color.primary,
   },
   main: {
     width: "100%",

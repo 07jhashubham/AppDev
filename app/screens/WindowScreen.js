@@ -1,9 +1,11 @@
 import React from "react";
 import { Image, ImageBackground, StyleSheet, Text, View } from "react-native";
 import color from "../config/color";
+import AppButton from "../components/AppButton";
 function WindowScreen(props) {
   return (
     <ImageBackground
+      blurRadius={10}
       source={require("../assets/chair.jpg")}
       style={style.background}
     >
@@ -12,10 +14,14 @@ function WindowScreen(props) {
           style={{ width: 100, height: 100 }}
           source={require("../assets/logo-red.png")}
         />
-        <Text style={{ fontSize: 20 }}>Sell what you don't need</Text>
+        <Text style={{ fontSize: 25, fontWeight: "600", paddingVertical: 10 }}>
+          Sell what you don't need
+        </Text>
       </View>
-      <View style={style.box1}></View>
-      <View style={style.box2}></View>
+      <View style={style.button}>
+        <AppButton title={"Login"} />
+        <AppButton title={"Register"} colors="secondry" />
+      </View>
     </ImageBackground>
   );
 }
@@ -26,15 +32,9 @@ const style = StyleSheet.create({
     justifyContent: "flex-end",
     alignItems: "center",
   },
-  box1: {
+  button: {
+    padding: 20,
     width: "100%",
-    height: 70,
-    backgroundColor: color.secondry,
-  },
-  box2: {
-    width: "100%",
-    height: 70,
-    backgroundColor: color.primary,
   },
 });
 
